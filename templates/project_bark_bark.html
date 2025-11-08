@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bark Bark Content Creation - Amar Adda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <span class="brand-text">AMAR ADDA</span>
+    </div>
+    <div class="nav-links">
+      <a href="/">HOME</a>
+      <a href="/#about">ABOUT</a>
+      <a href="/#services">SERVICES</a>
+      <a href="/#work">WORK</a>
+      <a href="/#team">TEAM</a>
+      <a href="/#contact">CONTACT</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/amar__adda" target="_blank" class="instagram-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+      <a href="mailto:AmarAdda2004@gmail.com" class="mail-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Project Detail Section -->
+  <section class="project-detail">
+    <div class="project-header">
+      <h1>BARK BARK CONTENT CREATION</h1>
+      <p class="project-subtitle">Social Media Strategy & Brand Storytelling</p>
+    </div>
+
+    <div class="project-content">
+      <div class="project-image-main">
+        <img src="{{ url_for('static', filename='images/content_creation.png') }}" alt="Bark Bark Content Creation">
+      </div>
+
+      <div class="project-description">
+        <h2>Project Overview</h2>
+        <p>We partnered with Bark Bark to create engaging social media content and brand storytelling that resonates with pet lovers across Northeast India. Our creative team developed a comprehensive content strategy that resulted in viral moments and significant audience engagement.</p>
+
+        <h2>What We Did</h2>
+        <ul>
+          <li><strong>Social Media Content Strategy:</strong> Developed a cohesive content calendar with engaging posts, stories, and reels that captured the hearts of pet owners.</li>
+          <li><strong>Brand Storytelling:</strong> Crafted compelling narratives that highlighted the unique bond between pets and their owners.</li>
+          <li><strong>Viral Video Content:</strong> Created shareable video content that generated thousands of views and interactions.</li>
+          <li><strong>Community Engagement:</strong> Built and nurtured an active community of pet lovers through interactive campaigns and user-generated content.</li>
+          <li><strong>Visual Identity:</strong> Designed consistent and appealing visual elements that strengthened brand recognition.</li>
+        </ul>
+
+        <h2>Results</h2>
+        <p>The campaign successfully increased Bark Bark's social media following by over 300%, with multiple posts achieving viral status. The engaging content strategy led to higher customer engagement and brand loyalty, establishing Bark Bark as a beloved brand in the pet care community.</p>
+
+        <div class="project-cta">
+          <a href="/#contact" class="cta-button">Start Your Project</a>
+          <a href="/#work" class="back-button">← Back to Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ in Assam. &copy; 2025 Amar Adda</p>
+  </footer>
+</body>
+</html>

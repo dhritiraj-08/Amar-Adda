@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amar Adda - Youth Creator Collective, Assam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop id="bg-video">
+      <source src="{{ url_for('static', filename='videos/website_intro.mp4') }}" type="video/mp4">
+      <!-- Fallback animated background if video fails to load -->
+      <div class="video-fallback">
+        <div class="animated-gradient"></div>
+        <div class="floating-particles">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+      </div>
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <span class="brand-text">AMAR ADDA</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICES</a>
+      <a href="#work">WORK</a>
+      <a href="#team">TEAM</a>
+      <a href="#contact">CONTACT</a>
+      <a href="#more">MORE...</a>
+    </div>
+    <div class="social-icons">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 17.5C14.7614 17.5 17 15.2614 17 12.5C17 9.73858 14.7614 7.5 12 7.5C9.23858 7.5 7 9.73858 7 12.5C7 15.2614 9.23858 17.5 12 17.5Z"/>
+          <path d="M12 1.5V4.5M12 20.5V23.5M4.22 4.72L6.34 6.84M17.66 17.16L19.78 19.28M1 12.5H4M20 12.5H23M4.22 20.28L6.34 18.16M17.66 7.84L19.78 5.72" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="https://www.instagram.com/amar__adda" target="_blank" class="instagram-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+      <a href="mailto:AmarAdda2004@gmail.com" class="mail-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">FLAGSHIP YOUTH CREATOR COLLECTIVE OF ASSAM & NORTHEAST INDIA</p>
+      <h1 class="hero-title">AMAR ADDA</h1>
+      <img src="{{ url_for('static', filename='assets/logo.jpg') }}" alt="Amar Adda Logo" class="hero-logo"/>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-content">
+      <h2>ABOUT US</h2>
+      <p>
+        At Amar Adda, we bring stories, moments, and creativity to life. From grand events to viral content, we handle everything — event management, production, post-production, videography, editing, and content creation. Rooted in Assam and the Northeast, our mission is to turn local talent and culture into unforgettable experiences that captivate audiences across India. We're not just managing events — we're creating memories, building stories, and powering the region's creator revolution.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-content">
+      <h2>SERVICES</h2>
+      <div class="services-grid">
+        <div class="service-box" id="event-management" data-service="event-management">
+          <div class="service-box-overlay"></div>
+          <h3>EVENT MANAGEMENT</h3>
+        </div>
+        <div class="service-box" id="production" data-service="production">
+          <div class="service-box-overlay"></div>
+          <h3>PRODUCTION</h3>
+        </div>
+        <div class="service-box" id="live-coverage" data-service="live-coverage">
+          <div class="service-box-overlay"></div>
+          <h3>LIVE COVERAGE</h3>
+        </div>
+        <div class="service-box" id="content-creation" data-service="content-creation">
+          <div class="service-box-overlay"></div>
+          <h3>CONTENT CREATION</h3>
+        </div>
+      </div>
+      
+      <!-- Service Detail Cards (Hidden by default) -->
+      <div id="service-modal" class="service-modal">
+        <div class="service-card">
+          <div class="service-card-header">
+            <h2 id="service-title">SERVICE TITLE</h2>
+            <button class="close-btn" onclick="closeServiceCard()">&times;</button>
+          </div>
+          
+          <div class="service-card-content">
+            <div class="service-images">
+              <div class="image-stack">
+                <img id="service-img1" src="" alt="Service Image 1" class="service-image img1">
+                <img id="service-img2" src="" alt="Service Image 2" class="service-image img2">
+              </div>
+            </div>
+            
+            <div class="service-description">
+              <h3>What We Do</h3>
+              <p id="service-desc">Service description will appear here...</p>
+              
+              <h4>Our Expertise</h4>
+              <ul id="service-features">
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+              </ul>
+              
+              <div class="service-cta">
+                <button class="cta-btn" onclick="scrollToContact()">Get Started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="work">
+    <h2>OUR WORK</h2>
+    <p class="work-subtitle">Showcasing our creative excellence and impactful projects across Northeast India</p>
+    
+    <div class="work-cards-container">
+      <div class="work-card active" data-index="0">
+        <!-- Left: Image -->
+        <div class="work-card-image">
+          <img src="{{ url_for('static', filename='images/content_creation.png') }}" alt="Bark Bark Content Creation">
+        </div>
+        
+        <!-- Right: Description -->
+        <div class="work-card-description">
+          <div class="work-card-description-content">
+            <h3>Description :</h3>
+            <p class="work-title">Bark Bark Content Creation</p>
+            <p class="work-details">We created engaging social media content and brand storytelling for Bark Bark that resonated with pet lovers across the region. Our creative team developed a comprehensive content strategy that resulted in viral moments and significant audience engagement, building a strong community around the brand.</p>
+          </div>
+          <div class="work-card-description-footer">
+            <a href="{{ url_for('project_bark_bark') }}" class="learn-more-link">More info ❯</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="work-card" data-index="1">
+        <!-- Left: Image -->
+        <div class="work-card-image">
+          <img src="{{ url_for('static', filename='images/production.png') }}" alt="Utopia Promo Video">
+        </div>
+        
+        <!-- Right: Description -->
+        <div class="work-card-description">
+          <div class="work-card-description-content">
+            <h3>Description :</h3>
+            <p class="work-title">Utopia Promo Video</p>
+            <p class="work-details">Produced a high-impact promotional video showcasing innovative concepts with cinematic quality. Our production team handled everything from concept development to final delivery, creating a visually stunning piece that captured the essence of the brand and left a lasting impression on viewers.</p>
+          </div>
+          <div class="work-card-description-footer">
+            <a href="{{ url_for('project_utopia') }}" class="learn-more-link">More info ❯</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="work-card" data-index="2">
+        <!-- Left: Image -->
+        <div class="work-card-image">
+          <img src="{{ url_for('static', filename='images/event_management.png') }}" alt="Teencon Debates Production">
+        </div>
+        
+        <!-- Right: Description -->
+        <div class="work-card-description">
+          <div class="work-card-description-content">
+            <h3>Description :</h3>
+            <p class="work-title">Teencon Debates Production</p>
+            <p class="work-details">Delivered complete event production and live coverage of youth debates, capturing intellectual discourse and dynamic discussions. Our team managed multi-camera setups, live streaming, and post-production to create comprehensive coverage of this important youth event that inspired the next generation.</p>
+          </div>
+          <div class="work-card-description-footer">
+            <a href="{{ url_for('project_teencon') }}" class="learn-more-link">More info ❯</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="team">
+    <h2>OUR TEAM</h2>
+    <div class="team-grid">
+      <div class="team-member" id="jishnu">
+        <div class="member-image"></div>
+        <div class="member-name-overlay">
+          <h3>JISHNU PRATIM KASHYAP</h3>
+        </div>
+        <div class="member-info">
+          <h3>JISHNU PRATIM KASHYAP</h3>
+          <h4>Public Relations & Management</h4>
+          <p>Leading our external communications and strategic partnerships to expand Amar Adda's reach across Northeast India. Specializes in building relationships with clients, media, and industry partners.</p>
+        </div>
+      </div>
+      <div class="team-member active" id="priyangshu">
+        <div class="member-image"></div>
+        <div class="member-name-overlay">
+          <h3>PRIYANGSHU DEKA</h3>
+        </div>
+        <div class="member-info">
+          <h3>PRIYANGSHU DEKA</h3>
+          <h4>Accounts & Internal Management</h4>
+          <p>Managing our financial operations and internal processes to ensure smooth project execution and team coordination. Handles budgeting, resource allocation, and operational efficiency.</p>
+        </div>
+      </div>
+      <div class="team-member" id="tushar">
+        <div class="member-image"></div>
+        <div class="member-name-overlay">
+          <h3>TUSHAR HALOI</h3>
+        </div>
+        <div class="member-info">
+          <h3>TUSHAR HALOI</h3>
+          <h4>Production Head</h4>
+          <p>Overseeing all production activities from pre-planning to execution, ensuring high-quality deliverables for every project. Expert in technical coordination and production workflows.</p>
+        </div>
+      </div>
+      <div class="team-member" id="bhargab">
+        <div class="member-image"></div>
+        <div class="member-name-overlay">
+          <h3>BHARGAB JOTI DAS</h3>
+        </div>
+        <div class="member-info">
+          <h3>BHARGAB JOTI DAS</h3>
+          <h4>Creative Head</h4>
+          <p>Driving our creative vision and content strategy to produce engaging and innovative entertainment experiences. Leads conceptualization and artistic direction for all projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact">
+    <h2>GET IN TOUCH</h2>
+    
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <a href="mailto:AmarAdda2004@gmail.com" class="contact-card clickable-card">
+          <div class="contact-icon email-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.1 3.89 23 5 23H11V21H5V19H13V17H5V15H11V13H5V11H13V9H21ZM15 15V13H17V11H15V9H17V7H15V9L13 11V13H15ZM19 15H17V17H15V19H17V21H19V19H21V17H19V15Z"/>
+            </svg>
+          </div>
+          <h3>EMAIL US</h3>
+          <p>AmarAdda2004@gmail.com</p>
+          <span class="click-hint">Click to send email</span>
+        </a>
+        
+        <div class="contact-card">
+          <div class="contact-icon phone-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 15.5C18.8 15.5 17.5 15.3 16.4 14.9C16.1 14.8 15.7 14.9 15.4 15.2L13.2 17.4C10.4 15.9 8 13.6 6.6 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9 7.6C8.7 6.5 8.5 5.2 8.5 4C8.5 3.4 8.1 3 7.5 3H4C3.4 3 3 3.4 3 4C3 13.4 10.6 21 20 21C20.6 21 21 20.6 21 20V16.5C21 15.9 20.6 15.5 20 15.5Z"/>
+            </svg>
+          </div>
+          <h3>CALL US</h3>
+          <p>
+            <a href="tel:6901741446">+91 6901741446</a><br>
+            <a href="tel:6913617447">+91 6913617447</a>
+          </p>
+        </div>
+      </div>
+      
+      <!-- Queries Form -->
+      <div class="queries-section">
+        <h3>SEND US YOUR QUERIES</h3>
+        <p class="queries-subtitle">Have a project in mind? Let's create something amazing together!</p>
+        
+        <form method="POST" action="/" class="queries-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required/>
+              <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required/>
+              <span class="form-line"></span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" name="phone" placeholder="Phone Number (Optional)"/>
+            <span class="form-line"></span>
+          </div>
+          
+          <div class="form-group">
+            <select name="service" required>
+              <option value="">Select Service Type</option>
+              <option value="event-management">Event Management</option>
+              <option value="production">Production</option>
+              <option value="live-coverage">Live Coverage</option>
+              <option value="content-creation">Content Creation</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="form-line"></span>
+          </div>
+          
+          <div class="form-group">
+            <textarea name="message" placeholder="Tell us about your project or query..." required></textarea>
+            <span class="form-line"></span>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <span>SEND QUERY</span>
+            <div class="arrow-icon">▶</div>
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Compact Map Section -->
+    <div class="compact-map-section">
+      <div class="map-card" onclick="openGoogleMaps()">
+        <div class="map-header-compact">
+          <div class="contact-icon location-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              <circle cx="12" cy="9" r="1.5" fill="white"/>
+            </svg>
+          </div>
+          <div class="map-info-compact">
+            <h4>VISIT US</h4>
+            <p>Lakhimi Nagar, Guwahati, Assam</p>
+          </div>
+        </div>
+        
+        <div class="compact-embedded-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d236.5!2d91.786355!3d26.139549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDA4JzIyLjQiTiA5McKwNDcnMTAuOSJF!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin"
+            width="100%" 
+            height="200" 
+            style="border:0; border-radius: 10px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-click-overlay">
+            <span>CLICK TO OPEN IN GOOGLE MAPS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ in Assam. &copy; 2025 Amar Adda</p>
+  </footer>
+
+  <script>
+    // Auto-hide flash messages after 5 seconds and scroll to contact section
+    document.addEventListener('DOMContentLoaded', function() {
+      const flashMessages = document.querySelectorAll('.flash-message');
+      
+      // If there are flash messages, scroll to contact section
+      if (flashMessages.length > 0) {
+        setTimeout(function() {
+          document.getElementById('contact').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+      
+      flashMessages.forEach(function(message) {
+        setTimeout(function() {
+          message.style.opacity = '0';
+          message.style.transform = 'translateY(-20px)';
+          setTimeout(function() {
+            message.remove();
+          }, 300);
+        }, 5000);
+      });
+    });
+
+    // Form submission animation
+    document.querySelector('.queries-form').addEventListener('submit', function(e) {
+      const submitBtn = document.querySelector('.submit-btn');
+      submitBtn.innerHTML = '<span>SENDING...</span>';
+      submitBtn.style.background = '#666';
+      submitBtn.disabled = true;
+      
+      // Let the form submit normally, don't prevent default
+      // The server will handle the redirect and flash messages
+    });
+
+    // Interactive Team Section
+    document.addEventListener('DOMContentLoaded', function() {
+      const teamMembers = document.querySelectorAll('.team-member');
+      
+      teamMembers.forEach(function(member) {
+        member.addEventListener('click', function() {
+          // Remove active class from all members
+          teamMembers.forEach(function(m) {
+            m.classList.remove('active');
+          });
+          
+          // Add active class to clicked member
+          this.classList.add('active');
+        });
+        
+        // Optional: Also trigger on hover for better UX
+        member.addEventListener('mouseenter', function() {
+          // Remove active class from all members
+          teamMembers.forEach(function(m) {
+            m.classList.remove('active');
+          });
+          
+          // Add active class to hovered member
+          this.classList.add('active');
+        });
+      });
+    });
+
+    // Google Maps function
+    function openGoogleMaps() {
+      window.open('https://www.google.com/maps/place/26%C2%B008\'22.4%22N+91%C2%B047\'10.9%22E/@26.1395137,91.7860541,20.36z/data=!4m13!1m8!3m7!1s0x375a592f21d900df:0xd0226442d330d473!2sLakhimi+Nagar,+Guwahati,+Assam!3b1!8m2!3d26.1389692!4d91.7824835!16s%2Fg%2F11cjk3k_hz!3m3!8m2!3d26.139549!4d91.786355?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D', '_blank');
+    }
+
+    // Work Cards Click Handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const workCards = document.querySelectorAll('.work-card');
+      
+      workCards.forEach(card => {
+        card.addEventListener('click', function() {
+          // Remove active class from all cards
+          workCards.forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked card
+          this.classList.add('active');
+        });
+      });
+    });
+
+    // Logo spin on click
+    document.addEventListener('DOMContentLoaded', function() {
+      const logo = document.querySelector('.hero-logo');
+      let isSpinning = false;
+      
+      logo.addEventListener('click', function() {
+        if (!isSpinning) {
+          isSpinning = true;
+          this.classList.add('spinning');
+          
+          // Remove spinning class after animation completes
+          setTimeout(() => {
+            this.classList.remove('spinning');
+            isSpinning = false;
+          }, 1000); // Match the animation duration (1s)
+        }
+      });
+    });
+
+    // Service Box Click Handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const serviceBoxes = document.querySelectorAll('.service-box');
+      
+      serviceBoxes.forEach(box => {
+        box.addEventListener('click', function() {
+          openServiceCard(this.dataset.service);
+        });
+      });
+    });
+
+    // Work Accordion Handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const workItems = document.querySelectorAll('.work-item');
+      
+      workItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Remove active class from all items
+          workItems.forEach(i => i.classList.remove('active'));
+          
+          // Add active class to clicked item
+          this.classList.add('active');
+        });
+      });
+    });
+
+    // Service Card Functions
+    const serviceData = {
+      'event-management': {
+        title: 'EVENT MANAGEMENT',
+        description: 'We specialize in creating unforgettable events from concept to execution. Our comprehensive event management services ensure every detail is perfectly orchestrated for maximum impact and audience engagement.',
+        features: [
+          'Complete event planning and coordination',
+          'Venue selection and management',
+          'Vendor coordination and logistics',
+          'On-site event supervision',
+          'Post-event analysis and reporting'
+        ],
+        images: [
+          '/static/images/event_management.png',
+          '/static/images/background1.png'
+        ]
+      },
+      'production': {
+        title: 'PRODUCTION',
+        description: 'Our production team brings creative visions to life with state-of-the-art equipment and technical expertise. From pre-production planning to final delivery, we ensure professional quality in every project.',
+        features: [
+          'Video and audio production',
+          'Equipment rental and setup',
+          'Technical crew management',
+          'Live streaming and broadcasting',
+          'Post-production editing and finishing'
+        ],
+        images: [
+          '/static/images/production.png',
+          '/static/images/background1.png'
+        ]
+      },
+      'live-coverage': {
+        title: 'LIVE COVERAGE',
+        description: 'Capture every moment with our professional live coverage services. We provide real-time documentation and broadcasting solutions that extend your event reach beyond physical boundaries.',
+        features: [
+          'Multi-camera live streaming',
+          'Real-time social media coverage',
+          'Professional photography',
+          'Live event documentation',
+          'Instant content delivery'
+        ],
+        images: [
+          '/static/images/Live_coverage.png',
+          '/static/images/background1.png'
+        ]
+      },
+      'content-creation': {
+        title: 'CONTENT CREATION',
+        description: 'Transform ideas into compelling content that resonates with your audience. Our creative team develops engaging multimedia content tailored to your brand and objectives.',
+        features: [
+          'Creative concept development',
+          'Video and graphic content creation',
+          'Social media content strategy',
+          'Brand storytelling and messaging',
+          'Content optimization and distribution'
+        ],
+        images: [
+          '/static/images/content_creation.png',
+          '/static/images/background1.png'
+        ]
+      }
+    };
+
+    function openServiceCard(serviceId) {
+      const modal = document.getElementById('service-modal');
+      const card = modal.querySelector('.service-card');
+      const imageStack = modal.querySelector('.image-stack');
+      const data = serviceData[serviceId];
+      
+      if (data) {
+        // Update content
+        document.getElementById('service-title').textContent = data.title;
+        document.getElementById('service-desc').textContent = data.description;
+        document.getElementById('service-img1').src = data.images[0];
+        document.getElementById('service-img2').src = data.images[1];
+        
+        // Update features list
+        const featuresList = document.getElementById('service-features');
+        featuresList.innerHTML = '';
+        data.features.forEach(feature => {
+          const li = document.createElement('li');
+          li.textContent = feature;
+          featuresList.appendChild(li);
+        });
+        
+        // Show modal
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        // Start image cycling after a short delay
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+          setTimeout(() => {
+            imageStack.classList.add('cycling');
+          }, 600);
+        }
+        
+        // Add click handler for card swirl animation
+        card.onclick = function(e) {
+          // Don't trigger on close button or CTA button clicks
+          if (e.target.classList.contains('close-btn') || 
+              e.target.classList.contains('cta-btn') ||
+              e.target.closest('.close-btn') ||
+              e.target.closest('.cta-btn')) {
+            return;
+          }
+          
+          if (!prefersReducedMotion) {
+            this.classList.remove('card-clicked');
+            void this.offsetWidth; // Force reflow
+            this.classList.add('card-clicked');
+            
+            setTimeout(() => {
+              this.classList.remove('card-clicked');
+            }, 500);
+          }
+        };
+      }
+    }
+
+    function closeServiceCard() {
+      const modal = document.getElementById('service-modal');
+      const imageStack = modal.querySelector('.image-stack');
+      
+      // Stop image cycling
+      imageStack.classList.remove('cycling');
+      
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    function scrollToContact() {
+      closeServiceCard();
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function(e) {
+      const modal = document.getElementById('service-modal');
+      if (e.target === modal) {
+        closeServiceCard();
+      }
+    });
+
+    // Work Cards Click Handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const workCards = document.querySelectorAll('.work-card');
+      
+      workCards.forEach(card => {
+        card.addEventListener('click', function() {
+          workCards.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+
+    // Dark/Light Mode Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      body.setAttribute('data-theme', currentTheme);
+      
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    });
+
+  </script>
+</body>
+</html>
