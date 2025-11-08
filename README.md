@@ -14,8 +14,9 @@ Official website for Amar Adda, the flagship youth creator collective of Assam &
 
 ## Tech Stack
 
-- **Backend**: Flask (Python)
+- **Backend**: Django (Python)
 - **Frontend**: HTML5, CSS3, JavaScript
+- **Database**: SQLite (development), PostgreSQL (production)
 - **Fonts**: Bebas Neue, Coolvetica
 - **Deployment**: Vercel
 
@@ -26,14 +27,29 @@ Official website for Amar Adda, the flagship youth creator collective of Assam &
 pip install -r requirements.txt
 ```
 
-2. Run the application:
+2. Run migrations:
 ```bash
-python app.py
+python manage.py migrate
 ```
 
-3. Open your browser and navigate to:
+3. Create a superuser (optional, for admin access):
+```bash
+python manage.py createsuperuser
 ```
-http://127.0.0.1:5000
+
+4. Run the development server:
+```bash
+python manage.py runserver
+```
+
+5. Open your browser and navigate to:
+```
+http://127.0.0.1:8000
+```
+
+6. Access admin panel at:
+```
+http://127.0.0.1:8000/admin
 ```
 
 ## Deployment to Vercel
@@ -86,19 +102,33 @@ sender_password = os.environ.get('GMAIL_APP_PASSWORD')
 
 ```
 AmarAdda/
-├── app.py                      # Flask application
-├── requirements.txt            # Python dependencies
-├── vercel.json                # Vercel configuration
-├── .gitignore                 # Git ignore file
-├── templates/                 # HTML templates
-│   ├── index.html            # Main page
+├── manage.py                  # Django management script
+├── requirements.txt           # Python dependencies
+├── vercel.json               # Vercel configuration
+├── build.sh                  # Build script for deployment
+├── .gitignore                # Git ignore file
+├── amaradda/                 # Django project settings
+│   ├── __init__.py
+│   ├── settings.py          # Project settings
+│   ├── urls.py              # Main URL configuration
+│   ├── wsgi.py              # WSGI application
+│   └── asgi.py              # ASGI application
+├── website/                  # Main Django app
+│   ├── __init__.py
+│   ├── models.py            # Database models
+│   ├── views.py             # View functions
+│   ├── urls.py              # App URL configuration
+│   ├── admin.py             # Admin configuration
+│   └── apps.py              # App configuration
+├── templates/                # HTML templates
+│   ├── index.html           # Main page
 │   ├── project_bark_bark.html
 │   ├── project_utopia.html
 │   └── project_teencon.html
-└── static/                    # Static assets
-    ├── style.css             # Main stylesheet
-    ├── images/               # Image files
-    └── videos/               # Video files
+└── static/                   # Static assets
+    ├── style.css            # Main stylesheet
+    ├── images/              # Image files
+    └── videos/              # Video files
 ```
 
 ## Contact

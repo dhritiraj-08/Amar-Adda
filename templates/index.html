@@ -8,13 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}"/>
 </head>
 <body>
   <!-- Video Background -->
   <div class="video-background">
     <video autoplay muted loop id="bg-video">
-      <source src="{{ url_for('static', filename='videos/website_intro.mp4') }}" type="video/mp4">
+      <source src="{% static 'videos/website_intro.mp4' %}" type="video/mp4">
       <!-- Fallback animated background if video fails to load -->
       <div class="video-fallback">
         <div class="animated-gradient"></div>
@@ -70,7 +71,7 @@
     <div class="hero-content">
       <p class="hero-subtitle">FLAGSHIP YOUTH CREATOR COLLECTIVE OF ASSAM & NORTHEAST INDIA</p>
       <h1 class="hero-title">AMAR ADDA</h1>
-      <img src="{{ url_for('static', filename='assets/logo.jpg') }}" alt="Amar Adda Logo" class="hero-logo"/>
+      <img src="{% static 'assets/logo.jpg' %}" alt="Amar Adda Logo" class="hero-logo"/>
     </div>
     <div class="scroll-indicator">
       <div class="scroll-arrow"></div>
@@ -153,7 +154,7 @@
       <div class="work-card active" data-index="0">
         <!-- Left: Image -->
         <div class="work-card-image">
-          <img src="{{ url_for('static', filename='images/content_creation.png') }}" alt="Bark Bark Content Creation">
+          <img src="{% static 'images/content_creation.png' %}" alt="Bark Bark Content Creation">
         </div>
         
         <!-- Right: Description -->
@@ -164,7 +165,7 @@
             <p class="work-details">We created engaging social media content and brand storytelling for Bark Bark that resonated with pet lovers across the region. Our creative team developed a comprehensive content strategy that resulted in viral moments and significant audience engagement, building a strong community around the brand.</p>
           </div>
           <div class="work-card-description-footer">
-            <a href="{{ url_for('project_bark_bark') }}" class="learn-more-link">More info ❯</a>
+            <a href="{% url 'project_bark_bark' %}" class="learn-more-link">More info ❯</a>
           </div>
         </div>
       </div>
@@ -172,7 +173,7 @@
       <div class="work-card" data-index="1">
         <!-- Left: Image -->
         <div class="work-card-image">
-          <img src="{{ url_for('static', filename='images/production.png') }}" alt="Utopia Promo Video">
+          <img src="{% static 'images/production.png' %}" alt="Utopia Promo Video">
         </div>
         
         <!-- Right: Description -->
@@ -183,7 +184,7 @@
             <p class="work-details">Produced a high-impact promotional video showcasing innovative concepts with cinematic quality. Our production team handled everything from concept development to final delivery, creating a visually stunning piece that captured the essence of the brand and left a lasting impression on viewers.</p>
           </div>
           <div class="work-card-description-footer">
-            <a href="{{ url_for('project_utopia') }}" class="learn-more-link">More info ❯</a>
+            <a href="{% url 'project_utopia' %}" class="learn-more-link">More info ❯</a>
           </div>
         </div>
       </div>
@@ -191,7 +192,7 @@
       <div class="work-card" data-index="2">
         <!-- Left: Image -->
         <div class="work-card-image">
-          <img src="{{ url_for('static', filename='images/event_management.png') }}" alt="Teencon Debates Production">
+          <img src="{% static 'images/event_management.png' %}" alt="Teencon Debates Production">
         </div>
         
         <!-- Right: Description -->
@@ -202,7 +203,7 @@
             <p class="work-details">Delivered complete event production and live coverage of youth debates, capturing intellectual discourse and dynamic discussions. Our team managed multi-camera setups, live streaming, and post-production to create comprehensive coverage of this important youth event that inspired the next generation.</p>
           </div>
           <div class="work-card-description-footer">
-            <a href="{{ url_for('project_teencon') }}" class="learn-more-link">More info ❯</a>
+            <a href="{% url 'project_teencon' %}" class="learn-more-link">More info ❯</a>
           </div>
         </div>
       </div>
@@ -263,17 +264,15 @@
     <h2>GET IN TOUCH</h2>
     
     <!-- Flash Messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <div class="flash-messages">
-          {% for category, message in messages %}
-            <div class="flash-message flash-{{ category }}">
-              {{ message }}
-            </div>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for message in messages %}
+          <div class="flash-message flash-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
     
     <div class="contact-container">
       <!-- Contact Info -->

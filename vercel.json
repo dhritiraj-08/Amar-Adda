@@ -2,14 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.py",
+      "src": "amaradda/wsgi.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "build.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles"
+      }
     }
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "amaradda/wsgi.py"
     }
   ]
 }
